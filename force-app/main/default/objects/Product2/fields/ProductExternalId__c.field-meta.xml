@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductExternalId__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>A 13 digit unique identifier of each product. This field should be used to relate the Product2 and respective ProductHistory__c record.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>A 13 digit unique identifier of each product. This field should be used to relate the Product2 and respective ProductHistory__c record.</inlineHelpText>
+    <label>Product External Id</label>
+    <length>13</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

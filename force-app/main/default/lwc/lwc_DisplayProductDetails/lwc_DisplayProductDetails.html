@@ -1,0 +1,36 @@
+<!-- 
+*************************************************************************************************
+* Name               : lwc_DisplayProductDetails
+* Author SFDC        : Shubham Agrawal                                               
+* Version            : 1.0                                                                                                                  
+* Function           : Component to display related Product2 record detail on ProductHistory__c
+                       record detail page.
+*************************************************************************************************
+* Change History    AUTHOR            	DATE                            Description                          
+* CH00              Shubham Agrawal     01-Apr-2021                  	created the Component
+*************************************************************************************************
+-->
+<template>
+    <lightning-accordion allow-multiple-sections-open="true">
+        <lightning-accordion-section name="Detail" label="Related Product Details">
+            <template if:true={product2Id}>
+                <!--I have used LDS to access the Product2 record details as best practice. This 
+                    will automatically bring formatting and styling based on user config.
+                    We could also use Page layouts with LDS to make field configurable.-->
+                <lightning-record-view-form record-id={product2Id} object-api-name="Product2">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="IsActive"></lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="CreatedDate"></lightning-output-field>
+                        </div>
+                    </div>
+                </lightning-record-view-form>
+            </template>
+            <template if:true={error}>
+                <div class="slds-align_absolute-center">{error}</div>
+            </template>
+        </lightning-accordion-section>
+    </lightning-accordion>
+</template>
